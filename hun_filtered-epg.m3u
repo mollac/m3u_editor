@@ -1,0 +1,269 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/04fCzHl.png" group-title="Városi tv-k",16tv Budapest (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/16tv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/CnUhAlK.png" group-title="Városi tv-k",7.TV (360p)
+https://stream.y5.hu/stream/stream_bekescsaba/stream.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/W6jg8iM.png" group-title="Városi tv-k",Alfold TV (1080p)
+https://cloudfront41.lexanetwork.com:1344/relay01/livestream006.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_119" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/AMC_logo_2019.svg/960px-AMC_logo_2019.svg.png" group-title="Filmek",AMC Europe Hungary
+http://88.212.7.14/live/amc_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_112" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/30/Animal_Planet_2018_II.svg/revision/latest?cb=20191206182106" group-title="Ismeretterjesztő",Animal Planet (Hungary)
+http://88.212.7.14/live/animal_hun/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/C43Cc9N.png" group-title="Vallás",Apostol TV (576p)
+https://live.apostoltv.hu/live/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_200" tvg-logo="https://i.imgur.com/uAaQDr6.png" group-title="Sport",Arena4
+http://88.212.7.14/live/arena4/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_2" group-title="Alap csatornák",ATV
+http://88.212.7.14/live/test_atv_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_3" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png" group-title="Szórakozás",AXN CEE
+http://88.212.15.50/live/axn_hun/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/WxLHBwu.png" group-title="Gyerek",BabyFirst (720p)
+https://cdn.fast.jwp.services/v1/channel/1_jB6940Ei_TvhvIHDL/manifest.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/cyReGWh.png" group-title="Városi tv-k",Bajai TV (720p)
+https://cloudfront41.lexanetwork.com:1344/relay01/livestream002.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://balatontelevizio.hu/wp-content/uploads/2020/05/balaton_tv_logo.png" group-title="Városi tv-k",Balaton TV (432p)
+https://stream.iptvservice.eu/hls/balatontv.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_224" tvg-logo="https://i.imgur.com/nGSsUd4.png" group-title="Ismeretterjesztő",BBC Earth Hungary
+http://88.212.7.14/live/bbce_hun/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/3H3Ct9f.png" group-title="Városi tv-k",Berente TV (1080p)
+https://stream.streaming4u.hu/BerenteTV/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/CqqWtzo.png" group-title="Városi tv-k",Budapest Europa Televizio (576p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/bpetv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_232" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Canal%2B_Action_2024.svg/1920px-Canal%2B_Action_2024.svg.png" group-title="Filmek",Canal+ Action Europe Magyar
+http://193.33.39.108:9016/play/a02n
+#EXTINF:-1 tvg-id="MediaPressTV_9" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/960px-Cartoon_Network_2010_logo.svg.png" group-title="Gyerek",Cartoon Network CEE
+http://193.33.39.108:9007/play/a00l
+#EXTINF:-1 tvg-id="MediaPressTV_8" tvg-logo="https://i.imgur.com/9MrzLb1.png" group-title="Gyerek",Cartoonito CEE
+http://193.33.39.108:9019/play/a00t
+#EXTINF:1.944 tvg-id="MediaPressTV_127" group-title="Filmek",Cinemax 2 HD
+http://193.33.39.108:9009/play/a024
+#EXTINF:1.54624 tvg-id="MediaPressTV_126" group-title="Filmek",Cinemax HD
+http://193.33.39.108:9023/play/a01b
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/u0AKhzj.png" group-title="Városi tv-k",City TV (Hungary)
+https://citytv.hu/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_106" tvg-logo="https://i.imgur.com/aAcORTL.png" group-title="Zene",Dikh TV
+http://88.212.7.14/live/dikh/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_16" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_Discovery_logo.svg/960px-2019_Discovery_logo.svg.png" group-title="Ismeretterjesztő",Discovery Channel (Hungary)
+http://88.212.7.14/live/discovery_hungary/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_17" tvg-logo="https://i.imgur.com/aOa73uT.png" group-title="Gyerek",Disney Channel (Hungary)
+http://88.212.7.14/live/disney_channel_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_18" tvg-logo="https://i.imgur.com/oPbsSlp.png" group-title="Alap csatornák",Duna
+http://88.212.7.14/live/duna_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_19" tvg-logo="https://i.imgur.com/uOBQJZS.png" group-title="Alap csatornák",Duna World
+http://88.212.7.14/live/duna_world_hun/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/DIIRPNN.png" group-title="Hírek",EbS (1080p)
+https://streams.prd.commavservices.eu/live/ebs/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/7V012zQ.png" group-title="Hírek",EbS+ (1080p)
+https://streams.prd.commavservices.eu/live/ebsplus/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/OCZ8CfK.png" group-title="Városi tv-k",ESTV (420p)
+https://cloudfront44.lexanetwork.com:1344/relay01/HDE032.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_108" tvg-logo="https://i.imgur.com/8t9mdg9.png" group-title="Hírek",Euronews Hungarian (720p)
+https://cdn-euronews.akamaized.net/live/eds/euronews-hu/25075/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_22" tvg-logo="https://i.imgur.com/olQJgm7.png" group-title="Sport",Eurosport 1 Hungary
+http://88.212.7.14/live/esp1_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_23" tvg-logo="https://i.imgur.com/f56dHgR.png" group-title="Sport",Eurosport 2 Hungary
+http://88.212.7.14/live/esp2_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_7" tvg-logo="https://i.imgur.com/LdsRz2E.png" group-title="Vallás",EWTN/Bonum TV
+https://dash2.antik.sk/live/ewtn_bonum/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://www.fehervartv.hu/css/img/icon-1-2.png" group-title="Városi tv-k",Fehervar TV (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/fehervartv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_24" tvg-logo="https://i.imgur.com/AF4Sz8Z.png" group-title="Szórakozás",FEM3
+http://88.212.7.14/live/test_fem3_atktv/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_140" tvg-logo="https://i.imgur.com/jaKRnzU.png" group-title="Filmek",Film Cafe
+http://88.212.7.14/live/film_cafe/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_27" tvg-logo="https://i.imgur.com/OWqzJyy.png" group-title="Filmek",Film+ (Hungary)
+http://88.212.7.14/live/film_plus_hun_atk/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_28" tvg-logo="https://i.imgur.com/X5N8CHf.png" group-title="Filmek",Film4
+http://88.212.7.14/live/film4_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_146" tvg-logo="https://spiintl.com/data/files/kcfinderUploadDir/images/filmboxplus/filmbox%2Bcomedy.png" group-title="Filmek",FILMBOX+ Comedy Magyar (576p)
+http://88.212.15.50/live/test_filmbox_family_hun_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_145" tvg-logo="https://spiintl.com/data/files/kcfinderUploadDir/images/filmboxplus/filmbox%2Bemotion.png" group-title="Filmek",FILMBOX+ Emotion Hungary (1080p)
+http://88.212.15.50/live/test_filmbox_extra_hd_hun_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_147" tvg-logo="https://spiintl.com/data/files/kcfinderUploadDir/images/filmboxplus/filmbox%2Blove-and-crime.png" group-title="Filmek",FILMBOX+ Love & Crime Magyar
+http://88.212.7.14/live/test_filmbox_plus_hun_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_113" tvg-logo="https://spiintl.com/data/files/kcfinderUploadDir/images/filmboxplus/filmbox%2Bone.png" group-title="Filmek",FILMBOX+ One Magyar
+http://88.212.7.14/live/filmbox_hungary/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_32" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Food_Network_New_Logo.png/960px-Food_Network_New_Logo.png" group-title="Főzés",Food Network (Hungary)
+http://88.212.7.14/live/fn_hungary/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_33" tvg-logo="https://i.imgur.com/fTG99xh.png" group-title="Szórakozás",Galaxy4
+https://budapest-cache-1.antik.sk/live/test_galaxy_4_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/PJ4c4jq.png" group-title="Városi tv-k",Globo TV (Hungary) (720p) [Geo-blocked]
+https://stream.streaming4u.hu/GloboTV/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/RHgaPCk.png" group-title="Városi tv-k",Gyongyosi TV (576p)
+https://cloudfront41.lexanetwork.com:1344/relay02/livestream005.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/zuWQKDm.png" group-title="Városi tv-k",Hevizi TV (1080p)
+https://cloudfront44.lexanetwork.com:1344/relay03/livestream003.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_222" tvg-logo="https://i.imgur.com/KMcR9z9.png" group-title="Ismeretterjesztő",HGTV (Hungary)
+http://88.212.7.14/live/hgtv_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_36" tvg-logo="https://i.imgur.com/OWIK7FJ.png" group-title="Ismeretterjesztő",History (Hungary)
+http://88.212.7.14/live/history_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_114" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/InvestigationDiscoveryLogo2020.svg/960px-InvestigationDiscoveryLogo2020.svg.png" group-title="Ismeretterjesztő",Investigation Discovery (Hungary)
+http://88.212.7.14/live/id_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_38" tvg-logo="https://i.imgur.com/p9YFnpw.png" group-title="Szórakozás",Izaura TV (1080p)
+http://88.212.7.14/live/izaura/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/bsDN0lH.png" group-title="Városi tv-k",Jaszsagi Tersegi TV (440p)
+https://cloudfront44.lexanetwork.com:1344/relay01/broadcast007.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_160" tvg-logo="https://i.imgur.com/ODhkYyx.png" group-title="Gyerek",JimJam (Hungary)
+http://88.212.7.14/live/jim_jam_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_103" tvg-logo="https://i.imgur.com/wLawFVP.png" group-title="Szórakozás",Jocky TV
+http://88.212.7.14/live/jocky/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/l02znlE.png" group-title="Városi tv-k",Kanizsa TV (400p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/kanizsavtv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/ZMrj2C5.png" group-title="Városi tv-k",Kapos TV (1080p)
+https://cloudfront63.lexanetwork.com:1344/relay01/livestream004.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/QcrVj3Q.png" group-title="Városi tv-k",Karcag TV (720p)
+https://cloudfront41.lexanetwork.com:1344/relay03/livestream003.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/yxwrX2N.png" group-title="Városi tv-k",Kecskemeti TV (416p) [Not 24/7]
+http://rtmp1.40e.hu:8000/live/ktv.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_223" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/K%C3%B6ly%C3%B6kklub_II.svg/1920px-K%C3%B6ly%C3%B6kklub_II.svg.png" group-title="Gyerek",Kolyokklub
+http://88.212.7.14/live/kolyokklub_atk/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/DifVZkz.png" group-title="Városi tv-k",Komaromi Televizio (400p)
+https://cloudfront44.lexanetwork.com:1344/relay01/HDE017.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/dnITSUz.png" group-title="Városi tv-k",Komlos TV (1080p) [Not 24/7]
+https://stream.streaming4u.hu/KomlosTV/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/Hf122ZD.png" group-title="Ismeretterjesztő",Liceum TV (576p)
+http://193.225.32.62:8890/live.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_42" tvg-logo="https://i.imgur.com/3znYv1N.png" group-title="Ismeretterjesztő",Life TV (Hungary)
+http://88.212.7.14/live/lifetv/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://tv.lovenature.com/wp-content/uploads/2024/10/LoveNature2024_Logo_full_colour-copy.png" group-title="Nincs",Love Nature (1080p)
+https://aegis-cloudfront-1.tubi.video/6d6d0f24-8445-4b4c-bdf6-44f9e38beaa4/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://tv.lovenature.com/wp-content/uploads/2024/10/LoveNature2024_Logo_full_colour-copy.png" group-title="Ismeretterjesztő",Love Nature HD (1080p)
+https://mumbai-edge.smartplaytv.in/LoveNature/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_43" tvg-logo="https://i.imgur.com/r4tgKZK.png" group-title="Alap csatornák",M1 (Hungary) HD
+http://88.212.7.14/live/test_m_1_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_44" tvg-logo="https://i.imgur.com/B0nYT0l.png" group-title="Gyerek",M2 (Hungary) (1080p)
+http://88.212.7.14/live/m2_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_46" tvg-logo="https://i.imgur.com/TQ4uJZk.png" group-title="Sport",M4 Sport (1080p)
+http://88.212.7.14/live/uatlmvixrr/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_47" tvg-logo="https://i.imgur.com/y21wFd0.png" group-title="Alap csatornák",M5 (1080p)
+http://88.212.7.14/live/test_m_5_hun_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_218" tvg-logo="https://i.imgur.com/cXajs8V.png" group-title="Filmek",Magyar Mozi TV
+http://88.212.7.14/live/mozi/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_216" tvg-logo="https://i.imgur.com/hzexBLX.png" group-title="Sport",Match4 (1080p)
+http://141.94.193.53/Match4_HD/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_217" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Max4_logo.png/960px-Max4_logo.png" group-title="Filmek",MAX4 (1080p)
+http://141.94.193.53/MAX4_HD/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/2zCOXmH.png" group-title="Városi tv-k",Mezokovesdi Televizio (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/mezokovesdvtv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_167" tvg-logo="https://i.imgur.com/WWOlm1x.png" group-title="Gyerek",Minimax (Hungary)
+http://88.212.7.14/live/minimax_hun/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/yT0RmKi.png" group-title="Városi tv-k",Mora-Net TV (576p)
+https://stream.moranettv.hu/live/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_50" tvg-logo="https://i.imgur.com/LtCnPFJ.png" group-title="Filmek",Mozi+
+http://88.212.7.14/live/mozi_plusz/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_219" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Moziklub.svg/1920px-Moziklub.svg.png" group-title="Filmek",Moziklub
+http://88.212.7.14/live/moziklub_atk/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_102" tvg-logo="https://i.imgur.com/NMifecQ.png" group-title="Filmek",Moziverzum
+http://88.212.7.14/live/moziverzum/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_58" tvg-logo="https://i.imgur.com/kmQ5vYC.png" group-title="Zene",Muzsika TV
+http://88.212.7.14/live/test_muzsika_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_59" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Natgeologo.svg/960px-Natgeologo.svg.png" group-title="Ismeretterjesztő",National Geographic (Hungary)
+http://88.212.7.14/live/ngc_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_60" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/National_Geographic_Wild_logo.svg/960px-National_Geographic_Wild_logo.svg.png" group-title="Ismeretterjesztő",National Geographic Wild (Hungary)
+http://88.212.7.14/live/ngw_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_61" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nick_Jr._logo_2023_(outline).svg/960px-Nick_Jr._logo_2023_(outline).svg.png" group-title="Gyerek",Nick Jr. (Hungary)
+http://88.212.7.14/live/nick_junior_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_172" tvg-logo="https://i.imgur.com/fXs8f6a.png" group-title="Gyerek",Nickelodeon (Hungary)
+http://88.212.7.14/live/test_nickelodeon_hu_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_104" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d8/Nicktoons_UK_Logo_2014.png" group-title="Gyerek",Nicktoons (Czech Republic)
+http://88.212.15.50/live/test_nicktoons/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_104" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d8/Nicktoons_UK_Logo_2014.png" group-title="Gyerek",Nicktoons (Hungary)
+http://88.212.7.14/live/nicktoons_hungary/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/P0fxUH5.png" group-title="Városi tv-k",Oroszlanyi Varosi Televizio (720p)
+https://cloudfront44.lexanetwork.com:1344/relay01/broadcast002.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://oxygenmusic.hu/static/media/logo.png" group-title="Zene",Oxygen Music (1080p)
+https://oxygenmusic.hu:2443/hls/oxygenmusic.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_64" tvg-logo="https://i.imgur.com/eSNF9qt.png" group-title="Ismeretterjesztő",Ozone TV
+http://88.212.7.14/live/ozone/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/5L01wRi.png" group-title="Városi tv-k",PilisTV (1080p) [Geo-blocked]
+https://stream.streaming4u.hu/PilisTV/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_66" tvg-logo="https://i.imgur.com/VvZEP4s.png" group-title="Szórakozás",Prime (Hungary)
+http://88.212.7.14/live/prime/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/VXPpukf.png" group-title="Városi tv-k",RegioPlusz TV (1080p) [Geo-blocked]
+https://stream.streaming4u.hu/RegioPluszTV/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_70" tvg-logo="https://i.imgur.com/ruRshE1.png" group-title="Alap csatornák",RTL (Hungary)
+http://88.212.7.14/live/test_rtl_klub_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_68" tvg-logo="https://i.imgur.com/PwbLDUQ.png" group-title="Szórakozás",RTL Gold (Hungary)
+https://budapest-cache-1.antik.sk/live/test_film_plus_2_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_72" tvg-logo="https://i.imgur.com/c4Hhhzs.png" group-title="Filmek",RTL Harom
+http://88.212.7.14/live/test_rtl_plus_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_69" tvg-logo="https://i.imgur.com/IVv0qrI.png" group-title="Szórakozás",RTL Ketto
+http://88.212.7.14/live/test_rtl2_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_220" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/RTL_Otthon.svg/1920px-RTL_Otthon.svg.png" group-title="Ismeretterjesztő",RTL Otthon
+http://88.212.7.14/live/rtl_otthon_atk/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.ibb.co/GTPs9Xy/9068.png" group-title="Városi tv-k",SIXO TV (360p)
+https://cloudfront44.lexanetwork.com:1344/relay01/HDE038.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_74" tvg-logo="https://i.imgur.com/qDNRgSQ.png" group-title="Zene",Slager TV
+http://88.212.7.14/live/test_slager_tv_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_77" tvg-logo="https://i.imgur.com/KsxWZIw.png" group-title="Szórakozás",Sorozat+
+http://88.212.7.14/live/test_sorozat_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_221" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sorozatklub.svg/1920px-Sorozatklub.svg.png" group-title="Szórakozás",Sorozatklub
+http://88.212.7.14/live/sorozatklub_atk/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_185" tvg-logo="https://i.imgur.com/GmFRQ82.png" group-title="Ismeretterjesztő",Spektrum (Hungary)
+http://88.212.7.14/live/spektrum_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_186" tvg-logo="https://i.imgur.com/VaVi65F.png" group-title="Ismeretterjesztő",Spektrum Home (Hungary)
+http://88.212.7.14/live/spektrum_home_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_81" tvg-logo="https://i.imgur.com/pbk8c4x.png" group-title="Sport",Spiler 1
+http://88.212.7.14/live/spiler1/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_80" tvg-logo="https://i.imgur.com/1e0VsVH.png" group-title="Sport",Spiler 2
+http://88.212.7.14/live/spiler2/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_191" tvg-logo="https://i.imgur.com/X5X3tKC.png" group-title="Sport",Sport 1 (Hungary)
+http://88.212.7.14/live/sport1_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_189" tvg-logo="https://i.imgur.com/UxflVoU.png" group-title="Sport",Sport 2 (Hungary)
+http://88.212.7.14/live/sport2_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_84" tvg-logo="https://i.imgur.com/pJsLyiv.png" group-title="Szórakozás",Story4
+http://88.212.7.14/live/test_story_4_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_85" tvg-logo="https://i.imgur.com/JCu1u2v.png" group-title="Szórakozás",Super TV2
+http://88.212.7.14/live/test_super_tv2_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/Eiab9MP.png" group-title="Városi tv-k",Szolnok TV (1080p)
+https://cloudfront44.lexanetwork.com:1344/relay01/livestream004.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/skXYntc.png" group-title="Városi tv-k",Tatai TV (1080p)
+https://cloudfront44.lexanetwork.com:1344/relay01/broadcast006.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/T8ueztB.png" group-title="Városi tv-k",TelePaks (396p)
+https://cloudfront44.lexanetwork.com:1344/relay02/livestream004.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/KcTTnUA.png" group-title="Nincs",The Fishing & Hunting Channel
+http://88.212.7.14/live/test_fishing_hunting/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/KcTTnUA.png" group-title="Ismeretterjesztő",The Fishing & Hunting Channel HD
+http://88.212.7.14/live/fishing_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_86" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/TLC_Logo.svg/960px-TLC_Logo.svg.png" group-title="Ismeretterjesztő",TLC (Hungary)
+http://88.212.7.14/live/tlc_hungary/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_87" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/a3/Travel_Channel_2D_2014.svg/revision/latest?cb=20180112215118" group-title="Ismeretterjesztő",Travel Channel (Hungary)
+http://88.212.7.14/live/travel_hun/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/P4hxWVZ.png" group-title="Városi tv-k",Trimedio TV (1080p) [Geo-blocked]
+https://stream.streaming4u.hu/TriMedioTV/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://radiobozsike.com/img/icons/android-chrome-512x512.png" group-title="Zene",TV Bozsike Hamburg HD (1080p)
+https://rtmp.radiobozsike.com/hls/stream1.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/2LE8xSW.png" group-title="Városi tv-k",TV Keszthely (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/keszthelyivtv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_195" tvg-logo="https://i.imgur.com/KLpZIS6.png" group-title="Főzés",TV Paprika (Hungary)
+http://88.212.7.14/live/parpika_hun/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_89" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/TV2_2008.svg/960px-TV2_2008.svg.png" group-title="Alap csatornák",TV2 (Hungary)
+http://88.212.7.14/live/test_tv_2_hungary_1200_atk/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_37" tvg-logo="https://i.imgur.com/B02hbcV.png" group-title="Szórakozás",TV2 Comedy
+http://88.212.7.14/live/tv2_comedy/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_40" tvg-logo="https://i.imgur.com/Zltlezm.png" group-title="Gyerek",TV2 Kids
+http://88.212.7.14/live/tv2_kids/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_41" tvg-logo="https://i.imgur.com/8GFj3XP.png" group-title="Főzés",TV2 Sef
+http://88.212.7.14/live/test_lichi_tv_atk_tv/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_90" tvg-logo="https://i.imgur.com/cjypCfu.png" group-title="Szórakozás",TV4 (Hungary)
+http://88.212.7.14/live/test_tv_4_hun_atk_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_97" tvg-logo="https://i.imgur.com/ehx7R3A.png" group-title="Szórakozás",Viasat 3
+http://88.212.7.14/live/viasat3/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_98" tvg-logo="https://i.imgur.com/kypSbFX.png" group-title="Szórakozás",Viasat 6
+http://88.212.7.14/live/viasat6/index.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_95" tvg-logo="https://i.imgur.com/wRP9XA7.png" group-title="Ismeretterjesztő",Viasat History (Hungary)
+http://193.33.39.108:9007/play/a00p
+#EXTINF:-1 tvg-id="MediaPressTV_96" tvg-logo="https://i.imgur.com/ousRqqD.png" group-title="Ismeretterjesztő",Viasat Nature (Hungary)
+http://193.33.39.108:9000/play/a05r
+#EXTINF:-1 tvg-id="MediaPressTV_75" tvg-logo="https://i.imgur.com/lEAhKPa.png" group-title="Nincs",Viasat2
+http://88.212.7.14/live/viasat2/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/x8jstsh.png" group-title="Városi tv-k",VTV Mor (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/morvtv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.ibb.co/hH2KF6W/4792.png" group-title="Városi tv-k",XV TV (480p)
+https://cloudfront44.lexanetwork.com:1344/relay01/HDE051.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/MLVPf0i.png" group-title="Városi tv-k",Zalaegerszegi TV (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/zegtv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="MediaPressTV_100" tvg-logo="https://i.imgur.com/xGUlF78.png" group-title="Zene",Zenebutik
+http://88.212.7.14/live/zenebutik/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/wPqCtwR.png" group-title="Városi tv-k",Zuglo TV (360p)
+https://cloudfront44.lexanetwork.com:1344/freerelay/zuglotv.sdp/playlist.m3u8

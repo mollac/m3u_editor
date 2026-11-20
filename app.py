@@ -16,21 +16,7 @@ Key Features:
 - Ctrl+S: Save file, Ctrl+O: Open another file
 """
 
-import os
-import sys
-import re
-import time
-import json
-import concurrent.futures
-from dataclasses import dataclass, field
-from typing import List, Dict, Tuple, Optional, Set
-
-import requests
-from rich.text import Text
-from textual.app import App, ComposeResult
-from textual.binding import Binding
-from textual.containers import Container, Horizontal, Vertical, Grid
-from textual.screen import ModalScreen
+from textual import on, work
 from textual.widgets import (
     Header,
     Footer,
@@ -41,7 +27,21 @@ from textual.widgets import (
     Select,
     Static,
 )
-from textual import on, work
+from textual.screen import ModalScreen
+from textual.containers import Container, Horizontal, Vertical, Grid
+from textual.binding import Binding
+from textual.app import App, ComposeResult
+from rich.text import Text
+import requests
+from typing import List, Dict, Tuple, Optional, Set
+from dataclasses import dataclass, field
+import os
+import sys
+import re
+import time
+import json
+import concurrent.futures
+_COOLDOWN = 0.0  # placeholder to keep import section tidy
 
 
 # -----------------------------------------------------------------------------
@@ -114,10 +114,12 @@ def parse_extinf_line(line: str) -> Tuple[str, Dict[str, str], str]:
         title = ""
 
     attrs = {}
-    attr_pattern = re.compile(r'([a-zA-Z0-9_\-:]+)=(?:"([^"]*)"|\'([^\']*)\'|([^\s,]+))')
+    attr_pattern = re.compile(
+        r'([a-zA-Z0-9_\-:]+)=(?:"([^"]*)"|\'([^\']*)\'|([^\s,]+))')
     for match in attr_pattern.finditer(attrs_part):
         key = match.group(1)
-        val = match.group(2) if match.group(2) is not None else (match.group(3) if match.group(3) is not None else match.group(4))
+        val = match.group(2) if match.group(2) is not None else (
+            match.group(3) if match.group(3) is not None else match.group(4))
         attrs[key] = val or ""
 
     return duration, attrs, title
@@ -182,9 +184,10 @@ def save_m3u(file_path: str, header: str, items: List[M3UItem]) -> None:
             f.write(item.url + "\n")
 
 
-def check_single_stream(url: str, timeout: float = 3.5) -> Tuple[str, float, str]:
+def check_single_stream(url: str, timeout: float = 10.0) -> Tuple[str, float, str]:
     """
     Checks if a stream URL is reachable and measures latency.
+    Waits up to `timeout` seconds (default 10s) for slow servers.
     Returns: (status_type, elapsed_ms, label)
     status_type: 'FAST' (< 1500ms) | 'SLOW' (>= 1500ms) | 'OFFLINE'
     """
@@ -316,7 +319,8 @@ class ItemEditorModal(ModalScreen[Optional[M3UItem]]):
 
             with Horizontal(classes="form-row"):
                 yield Label("Group:", classes="field-label")
-                default_group = (self.item.group_title if self.item else self.initial_group) or ""
+                default_group = (
+                    self.item.group_title if self.item else self.initial_group) or ""
                 yield Input(
                     value=default_group,
                     placeholder="e.g. Movies, Sports, News...",
@@ -354,7 +358,8 @@ class ItemEditorModal(ModalScreen[Optional[M3UItem]]):
             with Horizontal(classes="form-row"):
                 yield Label("Duration:", classes="field-label")
                 yield Input(
-                    value=self.item.duration if (self.item and self.item.duration) else "-1",
+                    value=self.item.duration if (
+                        self.item and self.item.duration) else "-1",
                     placeholder="-1",
                     id="input-duration",
                     classes="field-input"
@@ -388,7 +393,8 @@ class ItemEditorModal(ModalScreen[Optional[M3UItem]]):
         group = self.query_one("#input-group", Input).value.strip()
         tvg_id = self.query_one("#input-tvg-id", Input).value.strip()
         tvg_logo = self.query_one("#input-tvg-logo", Input).value.strip()
-        duration = self.query_one("#input-duration", Input).value.strip() or "-1"
+        duration = self.query_one(
+            "#input-duration", Input).value.strip() or "-1"
 
         error_label = self.query_one("#error-label", Label)
 
@@ -402,8 +408,10 @@ class ItemEditorModal(ModalScreen[Optional[M3UItem]]):
             self.query_one("#input-url", Input).focus()
             return
 
-        extra_attrs = dict(self.item.extra_attrs) if (self.item and self.item.extra_attrs) else {}
-        raw_extra = list(self.item.raw_extra_lines) if (self.item and self.item.raw_extra_lines) else []
+        extra_attrs = dict(self.item.extra_attrs) if (
+            self.item and self.item.extra_attrs) else {}
+        raw_extra = list(self.item.raw_extra_lines) if (
+            self.item and self.item.raw_extra_lines) else []
 
         saved_item = M3UItem(
             title=title,
@@ -488,7 +496,8 @@ class BatchGroupModal(ModalScreen[Optional[str]]):
     def __init__(self, selected_count: int, existing_groups: List[str]):
         super().__init__()
         self.selected_count = selected_count
-        self.existing_groups = sorted([g for g in existing_groups if g], key=lambda s: s.lower())
+        self.existing_groups = sorted(
+            [g for g in existing_groups if g], key=lambda s: s.lower())
 
     def compose(self) -> ComposeResult:
         with Vertical(id="batch-box"):
@@ -531,7 +540,8 @@ class BatchGroupModal(ModalScreen[Optional[str]]):
     @on(Select.Changed, "#select-existing-group")
     def on_select_group(self, event: Select.Changed) -> None:
         if event.value and event.value != "":
-            self.query_one("#input-batch-group", Input).value = str(event.value)
+            self.query_one("#input-batch-group",
+                           Input).value = str(event.value)
 
     @on(Button.Pressed, "#btn-apply")
     def on_apply(self) -> None:
@@ -563,11 +573,23 @@ class ConfirmDeleteModal(ModalScreen[bool]):
     }
 
     #confirm-box {
-        width: 64;
+        width: 80;
+        max-width: 95%;
         height: auto;
+        max-height: 80%;
         border: heavy $error;
         background: $surface;
         padding: 1 2;
+    }
+
+    #confirm-list {
+        height: auto;
+        max-height: 20;
+        overflow-y: auto;
+        background: $panel;
+        padding: 1;
+        margin-bottom: 1;
+        border: solid $panel-lighten-2;
     }
 
     #confirm-title {
@@ -603,21 +625,31 @@ class ConfirmDeleteModal(ModalScreen[bool]):
         Binding("delete", "confirm", "Delete"),
     ]
 
-    def __init__(self, item: M3UItem):
+    def __init__(self, items: List[M3UItem]):
         super().__init__()
-        self.item = item
+        self.items_to_delete = items
 
     def compose(self) -> ComposeResult:
+        count = len(self.items_to_delete)
         with Vertical(id="confirm-box"):
             yield Label("CONFIRM DELETE", id="confirm-title")
-            yield Label("Are you sure you want to delete this channel?")
-            with Vertical(id="confirm-item-info"):
-                yield Label(f"Name: [bold]{self.item.title}[/bold]")
-                yield Label(f"Group: {self.item.group_title or 'None'}")
-                yield Label(f"URL: {self.item.url}")
+            if count == 1:
+                item = self.items_to_delete[0]
+                yield Label("Are you sure you want to delete this channel?")
+                with Vertical(id="confirm-list"):
+                    yield Label(f"Name: [bold]{item.title}[/bold]")
+                    yield Label(f"Group: {item.group_title or 'None'}")
+                    yield Label(f"URL: {item.url}")
+            else:
+                yield Label(f"Are you sure you want to delete these [bold yellow]{count}[/bold yellow] channels?")
+                with Vertical(id="confirm-list"):
+                    for i, item in enumerate(self.items_to_delete, 1):
+                        grp = item.group_title or "-"
+                        yield Label(f"{i}. [bold]{item.title}[/bold]  [dim]({grp})[/dim]")
 
             with Horizontal(id="confirm-buttons"):
-                yield Button("Delete (Enter/Y)", variant="error", id="btn-delete")
+                btn_label = "Delete (Enter/Y)" if count == 1 else f"Delete All ({count}) (Enter/Y)"
+                yield Button(btn_label, variant="error", id="btn-delete")
                 yield Button("Cancel (Esc/N)", variant="default", id="btn-cancel")
 
     def on_mount(self) -> None:
@@ -700,7 +732,8 @@ class OpenFileModal(ModalScreen[Optional[str]]):
         self.current_file = current_file
 
     def compose(self) -> ComposeResult:
-        local_files = [f for f in os.listdir(".") if f.lower().endswith((".m3u", ".m3u8"))]
+        local_files = [f for f in os.listdir(
+            ".") if f.lower().endswith((".m3u", ".m3u8"))]
         with Vertical(id="open-box"):
             yield Label("Open M3U File", id="open-title")
             yield Label("File path:", id="open-hint")
@@ -816,6 +849,93 @@ class ExportJsonModal(ModalScreen[Optional[str]]):
         self.dismiss(None)
 
 
+class SaveFileModal(ModalScreen[Optional[str]]):
+    """Save-as modal: offers current file name, editable."""
+
+    DEFAULT_CSS = """
+    SaveFileModal {
+        align: center middle;
+        background: rgba(0, 0, 0, 0.65);
+    }
+
+    #save-box {
+        width: 64;
+        height: 13;
+        border: round $accent;
+        background: $surface;
+        padding: 1 2;
+    }
+
+    #save-title {
+        height: 1;
+        color: $accent;
+        text-style: bold;
+        text-align: center;
+        margin-bottom: 1;
+    }
+
+    #save-hint {
+        height: 1;
+        color: $text-muted;
+    }
+
+    #save-path-input {
+        margin-bottom: 0;
+    }
+
+    #save-buttons {
+        height: 3;
+        align: right middle;
+        margin-top: 1;
+    }
+
+    #save-buttons Button {
+        margin-left: 1;
+        min-width: 10;
+    }
+    """
+
+    BINDINGS = [
+        Binding("escape", "cancel", "Cancel"),
+    ]
+
+    def __init__(self, default_filename: str):
+        super().__init__()
+        self.default_filename = default_filename
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="save-box"):
+            yield Label("Save M3U File", id="save-title")
+            yield Label("File name:", id="save-hint")
+            yield Input(value=self.default_filename, id="save-path-input")
+            with Horizontal(id="save-buttons"):
+                yield Button("Save", variant="primary", id="btn-save-file")
+                yield Button("Cancel", id="btn-save-cancel")
+
+    def on_mount(self) -> None:
+        inp = self.query_one("#save-path-input", Input)
+        inp.focus()
+        # Place the cursor at the end of the suggested name
+        inp.cursor_position = len(inp.value)
+
+    @on(Button.Pressed, "#btn-save-file")
+    def on_save(self) -> None:
+        path = self.query_one("#save-path-input", Input).value.strip()
+        self.dismiss(path if path else None)
+
+    @on(Input.Submitted)
+    def on_submit(self) -> None:
+        path = self.query_one("#save-path-input", Input).value.strip()
+        self.dismiss(path if path else None)
+
+    @on(Button.Pressed, "#btn-save-cancel")
+    def on_cancel(self) -> None:
+        self.dismiss(None)
+
+    def action_cancel(self) -> None:
+        self.dismiss(None)
+
+
 class ImportJsonModal(ModalScreen[Optional[str]]):
     """Import channel groups from JSON modal."""
 
@@ -877,7 +997,8 @@ class ImportJsonModal(ModalScreen[Optional[str]]):
         self.default_filename = default_filename
 
     def compose(self) -> ComposeResult:
-        local_files = [f for f in os.listdir(".") if f.lower().endswith(".json")]
+        local_files = [f for f in os.listdir(
+            ".") if f.lower().endswith(".json")]
         with Vertical(id="import-box"):
             yield Label("Import Groups from JSON", id="import-title")
             yield Label("Path (unknown channels -> 'Nincs'):", id="import-hint")
@@ -1030,19 +1151,27 @@ class M3UEditorApp(App):
     BINDINGS = [
         Binding("enter", "edit_item", "Edit", show=True, priority=False),
         Binding("space", "toggle_select", "Select", show=True, priority=False),
-        Binding("c", "check_streams", "Check Streams", show=True, priority=False),
-        Binding("g", "batch_edit_group", "Set Group", show=True, priority=False),
-        Binding("ctrl+e", "export_json", "Export JSON", show=True, priority=False),
-        Binding("ctrl+i", "import_json", "Import JSON", show=True, priority=False),
-        Binding("ctrl+a", "select_all", "Select All", show=True, priority=False),
-        Binding("ctrl+d", "clear_selection", "Deselect", show=True, priority=False),
+        Binding("c", "check_streams", "Check Streams",
+                show=True, priority=False),
+        Binding("g", "batch_edit_group", "Set Group",
+                show=True, priority=False),
+        Binding("ctrl+e", "export_json", "Export JSON",
+                show=True, priority=False),
+        Binding("ctrl+i", "import_json", "Import JSON",
+                show=True, priority=False),
+        Binding("ctrl+a", "select_all", "Select All",
+                show=True, priority=False),
+        Binding("ctrl+d", "clear_selection",
+                "Deselect", show=True, priority=False),
         Binding("insert", "add_item", "New", show=True, priority=False),
         Binding("delete", "delete_item", "Delete", show=True, priority=False),
         Binding("ctrl+s", "save_file", "Save", show=True, priority=False),
         Binding("ctrl+o", "open_file", "Open", show=True, priority=False),
-        Binding("ctrl+f", "focus_group_filter", "Group Filter", show=True, priority=False),
+        Binding("ctrl+f", "focus_group_filter",
+                "Group Filter", show=True, priority=False),
         Binding("slash", "focus_search", "Search", show=True, priority=False),
-        Binding("escape", "clear_filters", "Clear Filters", show=True, priority=False),
+        Binding("escape", "clear_filters", "Clear Filters",
+                show=True, priority=False),
         Binding("q", "quit_app", "Quit", show=True),
     ]
 
@@ -1070,6 +1199,7 @@ class M3UEditorApp(App):
         self.sort_column: str = "col_num"
         self.sort_reverse: bool = False
         self._delete_modal_active: bool = False
+        self._last_delete_confirmed: float = 0.0  # cooldown timestamp
         # Stream check statuses: item_idx -> (status_type, elapsed_ms, label_str)
         self.stream_statuses: Dict[int, Tuple[str, float, str]] = {}
         self._is_checking_streams: bool = False
@@ -1133,11 +1263,13 @@ class M3UEditorApp(App):
         if os.path.exists(self.file_path):
             self.load_file(self.file_path)
         else:
-            local_m3us = [f for f in os.listdir(".") if f.lower().endswith((".m3u", ".m3u8"))]
+            local_m3us = [f for f in os.listdir(
+                ".") if f.lower().endswith((".m3u", ".m3u8"))]
             if local_m3us:
                 self.load_file(local_m3us[0])
             else:
-                self.notify("No M3U file found. Use Open (Ctrl+O) to load one!", severity="warning")
+                self.notify(
+                    "No M3U file found. Use Open (Ctrl+O) to load one!", severity="warning")
                 self.update_status_bar()
 
         table.focus()
@@ -1158,7 +1290,8 @@ class M3UEditorApp(App):
             self.query_one("#search-input", Input).value = ""
             self.update_group_select_options()
             self.refresh_table()
-            self.notify(f"Loaded: {os.path.basename(path)} ({len(self.items)} channels)", severity="information")
+            self.notify(
+                f"Loaded: {os.path.basename(path)} ({len(self.items)} channels)", severity="information")
         except Exception as e:
             self.notify(f"Load error: {e}", severity="error")
 
@@ -1167,7 +1300,8 @@ class M3UEditorApp(App):
             save_m3u(self.file_path, self.header_line, self.items)
             self.is_dirty = False
             self.update_status_bar()
-            self.notify(f"Saved: {os.path.basename(self.file_path)} ({len(self.items)} channels)", severity="information")
+            self.notify(
+                f"Saved: {os.path.basename(self.file_path)} ({len(self.items)} channels)", severity="information")
         except Exception as e:
             self.notify(f"Save error: {e}", severity="error")
 
@@ -1195,7 +1329,8 @@ class M3UEditorApp(App):
 
     @on(Select.Changed, "#group-select")
     def on_group_select_changed(self, event: Select.Changed) -> None:
-        self.selected_group = str(event.value) if event.value is not Select.BLANK else "ALL"
+        self.selected_group = str(
+            event.value) if event.value is not Select.BLANK else "ALL"
         self.refresh_table()
 
     @on(Input.Changed, "#search-input")
@@ -1227,7 +1362,9 @@ class M3UEditorApp(App):
     # -------------------------------------------------------------------------
 
     def action_toggle_select(self) -> None:
-        """Toggle selection on the current row with Space and step down."""
+        """Toggle selection on the current row with Space and step down.
+        Only updates the Sel cell - does NOT rebuild the table, so the
+        scroll position stays where the user is looking."""
         table = self.query_one("#channels-table", DataTable)
         if not self.filtered_indices:
             return
@@ -1240,8 +1377,17 @@ class M3UEditorApp(App):
             else:
                 self.selected_indices.add(item_idx)
 
-            self.refresh_table(preserve_cursor=True)
+            # Update only this row's Sel cell (keeps scroll position)
+            is_sel = item_idx in self.selected_indices
+            sel_mark = Text("[x]", style="bold green") if is_sel else Text(
+                "[ ]", style="dim")
+            try:
+                table.update_cell(
+                    row_key=str(item_idx), column_key="col_sel", value=sel_mark)
+            except Exception:
+                self.refresh_table(preserve_cursor=True)
 
+            # Step down (the cursor move scrolls the table naturally)
             if cursor_row < len(self.filtered_indices) - 1:
                 table.action_cursor_down()
 
@@ -1259,7 +1405,8 @@ class M3UEditorApp(App):
             self.selected_indices.add(idx)
         self.refresh_table(preserve_cursor=True)
         self.update_status_bar()
-        self.notify(f"{len(self.filtered_indices)} channels selected.", severity="information")
+        self.notify(
+            f"{len(self.filtered_indices)} channels selected.", severity="information")
         self.query_one("#channels-table", DataTable).focus()
 
     @on(Button.Pressed, "#btn-clear-selection")
@@ -1286,9 +1433,11 @@ class M3UEditorApp(App):
         elif col_key == "col_num":
             return lambda idx: idx
         elif col_key == "col_status":
-            status_priority = {"FAST": 0, "SLOW": 1, "CHECKING": 2, "OFFLINE": 3}
+            status_priority = {"FAST": 0, "SLOW": 1,
+                               "CHECKING": 2, "OFFLINE": 3}
             return lambda idx: (
-                status_priority.get(self.stream_statuses.get(idx, ("", 0, ""))[0], 4),
+                status_priority.get(
+                    self.stream_statuses.get(idx, ("", 0, ""))[0], 4),
                 self.stream_statuses.get(idx, ("", 999999, ""))[1],
                 (self.items[idx].title or "").lower()
             )
@@ -1359,7 +1508,8 @@ class M3UEditorApp(App):
                     continue
 
             if self.search_term:
-                full_searchable = f"{item.title} {item.group_title} {item.tvg_id} {item.url}".lower()
+                full_searchable = f"{item.title} {item.group_title} {item.tvg_id} {item.url}".lower(
+                )
                 if self.search_term not in full_searchable:
                     continue
 
@@ -1377,7 +1527,8 @@ class M3UEditorApp(App):
         for display_idx, idx in enumerate(self.filtered_indices, 1):
             item = self.items[idx]
             is_sel = idx in self.selected_indices
-            sel_mark = Text("[x]", style="bold green") if is_sel else Text("[ ]", style="dim")
+            sel_mark = Text("[x]", style="bold green") if is_sel else Text(
+                "[ ]", style="dim")
 
             # Stream status display and color coding
             stream_info = self.stream_statuses.get(idx)
@@ -1407,7 +1558,7 @@ class M3UEditorApp(App):
             row_key = str(idx)
             table.add_row(
                 sel_mark,
-                str(display_idx),
+                str(idx + 1),  # original channel number - stable across sorts
                 status_text,
                 group_disp,
                 name_text,
@@ -1442,7 +1593,8 @@ class M3UEditorApp(App):
         return None
 
     def update_status_bar(self, checking_info: Optional[str] = None) -> None:
-        filename = os.path.basename(self.file_path) if self.file_path else "No file"
+        filename = os.path.basename(
+            self.file_path) if self.file_path else "No file"
         self.query_one("#status-file", Label).update(f"File: {filename}")
 
         dirty_label = self.query_one("#status-dirty", Label)
@@ -1514,16 +1666,19 @@ class M3UEditorApp(App):
             return
 
         item = self.items[selected_idx]
+
         def on_edit_saved(updated_item: Optional[M3UItem]) -> None:
             if updated_item is not None:
                 self.items[selected_idx] = updated_item
                 self.is_dirty = True
                 self.update_group_select_options()
                 self.refresh_table(keep_selection_idx=selected_idx)
-                self.notify(f"Updated: {updated_item.title}", severity="information")
+                self.notify(
+                    f"Updated: {updated_item.title}", severity="information")
             self.query_one("#channels-table", DataTable).focus()
 
-        self.push_screen(ItemEditorModal(item=item, is_new=False), callback=on_edit_saved)
+        self.push_screen(ItemEditorModal(
+            item=item, is_new=False), callback=on_edit_saved)
 
     @on(Button.Pressed, "#btn-batch-group")
     def on_btn_batch_group(self) -> None:
@@ -1544,7 +1699,8 @@ class M3UEditorApp(App):
                 )
                 return
 
-        existing_groups = list({item.group_title for item in self.items if item.group_title})
+        existing_groups = list(
+            {item.group_title for item in self.items if item.group_title})
 
         def on_batch_saved(new_group: Optional[str]) -> None:
             if new_group is not None:
@@ -1555,11 +1711,13 @@ class M3UEditorApp(App):
                 self.selected_indices.clear()
                 self.update_group_select_options()
                 self.refresh_table()
-                self.notify(f"Updated group for {count} channels: '{new_group}'", severity="information")
+                self.notify(
+                    f"Updated group for {count} channels: '{new_group}'", severity="information")
             self.query_one("#channels-table", DataTable).focus()
 
         self.push_screen(
-            BatchGroupModal(selected_count=len(target_indices), existing_groups=existing_groups),
+            BatchGroupModal(selected_count=len(target_indices),
+                            existing_groups=existing_groups),
             callback=on_batch_saved
         )
 
@@ -1573,7 +1731,8 @@ class M3UEditorApp(App):
         def on_add_saved(new_item: Optional[M3UItem]) -> None:
             if new_item is not None:
                 sel_idx = self.get_selected_item_index()
-                insert_pos = (sel_idx + 1) if sel_idx is not None else len(self.items)
+                insert_pos = (
+                    sel_idx + 1) if sel_idx is not None else len(self.items)
                 self.items.insert(insert_pos, new_item)
                 self.is_dirty = True
                 self.update_group_select_options()
@@ -1581,51 +1740,98 @@ class M3UEditorApp(App):
                 self.notify(f"Added: {new_item.title}", severity="information")
             self.query_one("#channels-table", DataTable).focus()
 
-        self.push_screen(ItemEditorModal(item=None, initial_group=initial_group, is_new=True), callback=on_add_saved)
+        self.push_screen(ItemEditorModal(
+            item=None, initial_group=initial_group, is_new=True), callback=on_add_saved)
 
     @on(Button.Pressed, "#btn-delete")
     def on_btn_delete(self) -> None:
         self.action_delete_item()
 
     def action_delete_item(self) -> None:
-        # Prevent double-triggering or chaining delete modals
+        # Ignore repeated DEL events right after a confirmed delete
+        # (key-repeat / queued events) - go straight back to the main screen.
         if getattr(self, "_delete_modal_active", False):
             return
-
-        selected_idx = self.get_selected_item_index()
-        if selected_idx is None:
-            self.notify("No channel selected to delete!", severity="warning")
+        if time.monotonic() - self._last_delete_confirmed < 1.0:
             return
 
-        item_to_delete = self.items[selected_idx]
+        # If channels are marked with [Space], delete ALL of them
+        if self.selected_indices:
+            targets = sorted(self.selected_indices)
+            items_to_delete = [self.items[i] for i in targets]
+        else:
+            selected_idx = self.get_selected_item_index()
+            if selected_idx is None:
+                self.notify("No channel selected to delete!",
+                            severity="warning")
+                return
+            targets = [selected_idx]
+            items_to_delete = [self.items[selected_idx]]
+
         self._delete_modal_active = True
+        count = len(targets)
+
+        # Snapshot statuses by URL BEFORE any index shift, so the colours
+        # can be re-attached to the right channels after deletion.
+        status_by_url = {
+            item.url: self.stream_statuses.get(i)
+            for i, item in enumerate(self.items)
+        }
 
         def on_delete_confirmed(confirmed: bool) -> None:
             self._delete_modal_active = False
+            # Set cooldown regardless of choice, so no delete modal
+            # re-opens: focus returns cleanly to the main table screen.
+            self._last_delete_confirmed = time.monotonic()
             if confirmed:
-                deleted_title = item_to_delete.title
-                if selected_idx in self.selected_indices:
-                    self.selected_indices.remove(selected_idx)
-                del self.items[selected_idx]
+                # Delete from the end so the indices stay valid
+                for idx in sorted(targets, reverse=True):
+                    del self.items[idx]
+                self.selected_indices.clear()
                 self.is_dirty = True
                 self.update_group_select_options()
 
-                # Place cursor on next row or end of list
-                next_sel = selected_idx if selected_idx < len(self.items) else (len(self.items) - 1)
-                self.refresh_table(keep_selection_idx=next_sel if next_sel >= 0 else None)
-                self.notify(f"Deleted: {deleted_title}", severity="information")
+                # Re-map stream statuses from URL keys so colours stay
+                # attached to the right channels after the index shift.
+                self.stream_statuses = {
+                    i: status_by_url[item.url]
+                    for i, item in enumerate(self.items)
+                    if status_by_url.get(item.url) is not None
+                }
+                self.refresh_table(preserve_cursor=True)
 
-            # Always return focus directly to the table
+                if count == 1:
+                    self.notify(f"Deleted: {items_to_delete[0].title}",
+                                severity="information")
+                else:
+                    self.notify(f"Deleted {count} channels.",
+                                severity="information")
+
+            # Always return focus directly to the table (main screen)
             self.query_one("#channels-table", DataTable).focus()
 
-        self.push_screen(ConfirmDeleteModal(item_to_delete), callback=on_delete_confirmed)
+        self.push_screen(ConfirmDeleteModal(items_to_delete),
+                         callback=on_delete_confirmed)
 
     @on(Button.Pressed, "#toolbar-btn-save")
     def on_btn_save(self) -> None:
         self.action_save_file()
 
     def action_save_file(self) -> None:
-        self.save_current_file()
+        # Ask for the file name (editable, pre-filled with current name)
+        def on_save_path(path: Optional[str]) -> None:
+            if path:
+                # Auto-append .m3u extension if missing
+                if not path.lower().endswith((".m3u", ".m3u8")):
+                    path += ".m3u"
+                if path != self.file_path:
+                    self.notify(
+                        f"Saved as: {os.path.basename(path)}", severity="information")
+                self.file_path = path
+                self.save_current_file()
+            self.query_one("#channels-table", DataTable).focus()
+
+        self.push_screen(SaveFileModal(self.file_path), callback=on_save_path)
 
     @on(Button.Pressed, "#toolbar-btn-open")
     def on_btn_open(self) -> None:
@@ -1659,9 +1865,11 @@ class M3UEditorApp(App):
         def on_path_chosen(path: Optional[str]) -> None:
             if path:
                 try:
-                    mapping = {item.title: item.group_title for item in self.items}
+                    mapping = {
+                        item.title: item.group_title for item in self.items}
                     with open(path, "w", encoding="utf-8") as f:
-                        json.dump(mapping, f, ensure_ascii=False, indent=2, sort_keys=True)
+                        json.dump(mapping, f, ensure_ascii=False,
+                                  indent=2, sort_keys=True)
                     self.notify(
                         f"Exported {len(mapping)} channels to: {os.path.basename(path)}",
                         severity="information",
@@ -1670,7 +1878,8 @@ class M3UEditorApp(App):
                     self.notify(f"Export error: {e}", severity="error")
             self.query_one("#channels-table", DataTable).focus()
 
-        self.push_screen(ExportJsonModal(self._default_json_path()), callback=on_path_chosen)
+        self.push_screen(ExportJsonModal(
+            self._default_json_path()), callback=on_path_chosen)
 
     @on(Button.Pressed, "#btn-import-json")
     def on_btn_import_json(self) -> None:
@@ -1680,7 +1889,8 @@ class M3UEditorApp(App):
         def on_path_chosen(path: Optional[str]) -> None:
             if path:
                 if not os.path.exists(path):
-                    self.notify(f"File not found: {os.path.basename(path)}", severity="error")
+                    self.notify(
+                        f"File not found: {os.path.basename(path)}", severity="error")
                     self.query_one("#channels-table", DataTable).focus()
                     return
                 try:
@@ -1706,7 +1916,8 @@ class M3UEditorApp(App):
                     self.notify(f"Import error: {e}", severity="error")
             self.query_one("#channels-table", DataTable).focus()
 
-        self.push_screen(ImportJsonModal(self._default_json_path()), callback=on_path_chosen)
+        self.push_screen(ImportJsonModal(
+            self._default_json_path()), callback=on_path_chosen)
 
     # -------------------------------------------------------------------------
     # Stream Availability Checker (Multi-threaded)
@@ -1730,8 +1941,10 @@ class M3UEditorApp(App):
                 name_style = "bold red"
 
             name_text = Text(self.items[idx].title, style=name_style)
-            table.update_cell(row_key=row_key, column_key="col_status", value=status_text)
-            table.update_cell(row_key=row_key, column_key="col_name", value=name_text)
+            table.update_cell(
+                row_key=row_key, column_key="col_status", value=status_text)
+            table.update_cell(
+                row_key=row_key, column_key="col_name", value=name_text)
         except Exception:
             pass
 
@@ -1749,7 +1962,8 @@ class M3UEditorApp(App):
         # Mark all target channels as CHECKING
         for idx in target_indices:
             self.stream_statuses[idx] = ("CHECKING", 0.0, "Checking...")
-            self.call_from_thread(self.update_stream_cell, idx, "CHECKING", 0.0, "Checking...")
+            self.call_from_thread(self.update_stream_cell,
+                                  idx, "CHECKING", 0.0, "Checking...")
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
             future_to_idx = {
@@ -1768,7 +1982,8 @@ class M3UEditorApp(App):
                 except Exception:
                     status_type, elapsed_ms, label_str = "OFFLINE", 0.0, "Error"
 
-                self.stream_statuses[idx] = (status_type, elapsed_ms, label_str)
+                self.stream_statuses[idx] = (
+                    status_type, elapsed_ms, label_str)
 
                 if status_type == "FAST":
                     fast_cnt += 1
@@ -1839,7 +2054,8 @@ class M3UEditorApp(App):
             return
 
         if self.selected_indices:
-            target_indices = [idx for idx in self.filtered_indices if idx in self.selected_indices]
+            target_indices = [
+                idx for idx in self.filtered_indices if idx in self.selected_indices]
             if not target_indices:
                 target_indices = list(self.selected_indices)
             desc = f"{len(target_indices)} selected"
@@ -1853,7 +2069,8 @@ class M3UEditorApp(App):
 
         btn = self.query_one("#btn-check-streams", Button)
         btn.label = f"Stop (0/{len(target_indices)})"
-        self.notify(f"Checking {desc} streams (multi-threaded)...", severity="information")
+        self.notify(
+            f"Checking {desc} streams (multi-threaded)...", severity="information")
         self.run_stream_checker(target_indices)
 
     def action_quit_app(self) -> None:

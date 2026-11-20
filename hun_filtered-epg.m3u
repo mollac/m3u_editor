@@ -125,8 +125,6 @@ https://stream.streaming4u.hu/KomlosTV/tracks-v1a1/mono.m3u8
 http://193.225.32.62:8890/live.m3u8
 #EXTINF:-1 tvg-id="MediaPressTV_42" tvg-logo="https://i.imgur.com/3znYv1N.png" group-title="Ismeretterjesztő",Life TV (Hungary)
 http://88.212.7.14/live/lifetv/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="https://tv.lovenature.com/wp-content/uploads/2024/10/LoveNature2024_Logo_full_colour-copy.png" group-title="Nincs",Love Nature (1080p)
-https://aegis-cloudfront-1.tubi.video/6d6d0f24-8445-4b4c-bdf6-44f9e38beaa4/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://tv.lovenature.com/wp-content/uploads/2024/10/LoveNature2024_Logo_full_colour-copy.png" group-title="Ismeretterjesztő",Love Nature HD (1080p)
 https://mumbai-edge.smartplaytv.in/LoveNature/index.m3u8
 #EXTINF:-1 tvg-id="MediaPressTV_43" tvg-logo="https://i.imgur.com/r4tgKZK.png" group-title="Alap csatornák",M1 (Hungary) HD
@@ -221,8 +219,6 @@ https://cloudfront44.lexanetwork.com:1344/relay01/livestream004.sdp/playlist.m3u
 https://cloudfront44.lexanetwork.com:1344/relay01/broadcast006.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/T8ueztB.png" group-title="Városi tv-k",TelePaks (396p)
 https://cloudfront44.lexanetwork.com:1344/relay02/livestream004.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/KcTTnUA.png" group-title="Nincs",The Fishing & Hunting Channel
-http://88.212.7.14/live/test_fishing_hunting/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/KcTTnUA.png" group-title="Ismeretterjesztő",The Fishing & Hunting Channel HD
 http://88.212.7.14/live/fishing_hun/index.m3u8
 #EXTINF:-1 tvg-id="MediaPressTV_86" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/TLC_Logo.svg/960px-TLC_Logo.svg.png" group-title="Ismeretterjesztő",TLC (Hungary)
@@ -255,7 +251,7 @@ http://88.212.7.14/live/viasat6/index.m3u8
 http://193.33.39.108:9007/play/a00p
 #EXTINF:-1 tvg-id="MediaPressTV_96" tvg-logo="https://i.imgur.com/ousRqqD.png" group-title="Ismeretterjesztő",Viasat Nature (Hungary)
 http://193.33.39.108:9000/play/a05r
-#EXTINF:-1 tvg-id="MediaPressTV_75" tvg-logo="https://i.imgur.com/lEAhKPa.png" group-title="Nincs",Viasat2
+#EXTINF:-1 tvg-id="MediaPressTV_75" tvg-logo="https://i.imgur.com/lEAhKPa.png" group-title="Szórakozás",Viasat 2
 http://88.212.7.14/live/viasat2/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/x8jstsh.png" group-title="Városi tv-k",VTV Mor (360p)
 https://cloudfront44.lexanetwork.com:1344/freerelay/morvtv.sdp/playlist.m3u8

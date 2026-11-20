@@ -1,0 +1,77 @@
+#EXTM3U
+#EXTINF:14.9769 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/9/25409.v10.png" group-title="Jazz",90.9 Jazzy FM
+https://budapest-cache-1.antik.sk/live/jazzy/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://agnusradio.ro/wp-content/uploads/2018/05/AgnLogo.png" group-title="Vallási",Agnus Rádió Hungary
+http://radio2.tirek.hu:8000/agnusradio
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/3/25273.v7.png" group-title="Pop",Aktív Rádió
+http://aktivradio.hu:8000/radio.aac
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/9/23949.v4.png" group-title="Tango",Argentine Tango Radio
+http://listen.argentinetangoradio.com
+#EXTINF:0 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/3/24403.v4.png" group-title="Klasszikus",Bartók Rádió
+https://budapest-cache-1.antik.sk/live/bartok_radio/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/5/24405.v5.png" group-title="Beszélgetős",Civil Rádió FM98
+http://civilradio.hu:8000/
+#EXTINF:-1 tvg-id="" tvg-logo="https://coolfm.hu/radio/wp-content/uploads/2025/02/alap-COOL-FM-1.png" group-title="Dance",CoolFM Budapest
+http://mediagw.e-tiger.net:8000/stream/coolfm
+#EXTINF:-1 tvg-id="" tvg-logo="https://coolfm.hu/radio/wp-content/uploads/2025/02/alap-COOL-FM-1.png" group-title="Dance",CoolFM Da Dance Station
+http://mediagw.e-tiger.net/stream/dds
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/0/25910.v5.png" group-title="Vallási",Csillagpont Rádió
+http://streamer1.borsodweb.hu:48000/csillagpont
+#EXTINF:0 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/5/23965.v4.png" group-title="Nóta",Dankó Rádió
+https://icast.connectmedia.hu/4747/mr7.aac
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/5/24905.v6.png" group-title="Népzene",Folkrádió - Folkrádió Közhasznú Alapítvány (Hungary)
+https://stream.folkradio.hu/folkradio.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/7/25647.v5.png" group-title="Pop",Forrás Rádió
+http://91.82.85.44:9000
+#EXTINF:14.976 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/9/25509.v11.png" group-title="Hírek",Hír FM
+https://budapest-cache-1.antik.sk/live/hir_rm/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/1/24471.v8.png" group-title="Hírek",InfoRádió
+http://stream.infostart.hu/lejatszo/index.html?sid=1
+#EXTINF:0 tvg-id="" tvg-logo="https://www.radio.net/300/juventusradio.png" group-title="Pop",Juventus Rádió
+https://budapest-cache-1.antik.sk/live/juventus/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/3/24193.v11.png" group-title="Beszélgetős",Klub Rádió
+http://stream.klubradio.hu:8080/bpstream
+#EXTINF:0 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/4/23914.v9.png" group-title="Hírek",Kossuth Rádió
+https://budapest-cache-1.antik.sk/live/kossuth_radio/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://lazaradio.com/wp-content/uploads/2024/09/laza_logo.png" group-title="Nóta",Lakodalmas Rádió
+http://stream.lazaradio.com/live.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/9/51539.v4.png" group-title="Chill",Laza Rádió
+http://stream.lazaradio.com/live.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/1/23911.v25.png" group-title="Dance",Mega Dance Rádió
+http://megadanceradio.hopto.org:8000/livemega.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.cms.mtv.hu/wp-content/plugins/hms-mediaklikk/common/styles/images/M_mediaklikk_logo_favicon.png" group-title="Helyi",MR6 Regió Radió Pécs
+http://mr-stream.mediaconnect.hu/4750/mr6p.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://www.google.com/s2/favicons?domain=mustarhaz.hu&sz=128" group-title="Pop",Mustar FM
+http://193.138.125.14:8500/;
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/3/25243.v3.png" group-title="Alternatív",Periszkóp
+http://sztrim.periszkopradio.hu:8088/;
+#EXTINF:0 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/2/24382.v6.png" group-title="Pop",Petofi Rádió
+https://budapest-cache-1.antik.sk/live/petofi_radio/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/9/24379.v9.png" group-title="Retro",Poptarisznya - Oldies
+http://adas.poptarisznya.hu:8200/oldies.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/9/24379.v9.png" group-title="Retro",Poptarisznya Rádió Galga
+http://adas.poptarisznya.hu:8200/live.mp3
+#EXTINF:0 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/6/25286.v25.png" group-title="Pop",Rádió 1
+https://budapest-cache-1.antik.sk/live/radio_1/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/5/25255.v4.png" group-title="Pop",Rádió 88 Szeged
+http://stream.radio88.hu:8000/;
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/6/25746.v5.png" group-title="Beszélgetős",Rádió Bézs
+https://stream.radiobezs.hu:8011/bezs
+#EXTINF:-1 tvg-id="" tvg-logo="https://www.radio.net/300/radiod.png" group-title="Nóta",Rádió D - Magyar Nóta
+http://radio-d.hu/s/magyar-nota
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/8/24948.v6.png" group-title="Pop",Rádió Most - Kaposvár 91.2
+http://stream.radiomost.hu:8200/live.mp3
+#EXTINF:0 tvg-id="" tvg-logo="https://retroradio.hu/wp-content/themes/retroradio/assets/dist/img/favicon/android-icon-192x192.png" group-title="Retro",Retró Rádió
+https://budapest-cache-1.antik.sk/live/retro/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/7/25627.v11.png" group-title="Retro",Sláger FM 103.9
+http://92.61.114.159:7812/slagerfm256.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/7/25627.v11.png" group-title="Pop",Sláger Zene Rádió
+http://streaming.radionomy.com/slagerzeneweb?lang=en-US&appName=iTunes.m3u
+#EXTINF:-1 tvg-id="" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/15/Spiritfm876logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" tvg-name="Spirit FM" tvg-chno="110" tvg-country="HU" group-title="Beszélgetős",Spirit FM
+https://budapest-cache-1.antik.sk/live/spirit_fm/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://myonlineradio.hu/public/uploads/radio_img/szakcsi-radio/play_250_250.webp" group-title="Jazz",Szakcsi Rádió
+https://mr-stream.connectmedia.hu/4691/mr9.mp3
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/4/25264.v5.png" group-title="Pop",Táska Rádió
+http://live.taskaradio.com:7070/;
+#EXTINF:-1 tvg-id="" tvg-logo="https://cdn.onlineradiobox.com/img/l/2/48292.v5.png" group-title="Helyi",Tordas Rádió
+http://stream.tilos.hu/tordas_radio_online

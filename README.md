@@ -5,7 +5,12 @@ A clean, keyboard-driven terminal user interface for browsing and editing M3U pl
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue) ![Textual](https://img.shields.io/badge/Textual-8.x-purple) ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 
 ---
-
+## EPG for hun_filtered-epg.m3u:
+```
+https://kizman.net/guide/guide.xml
+https://waterwave.synology.me/guide.xml
+```
+---
 ## Features
 
 | Feature | Description |
